@@ -11,8 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('pages.home');
+// Home page
+Route::get('/', function () { 
+	if(Auth::check()) {
+		return view('questions.index'); 
+	} else {
+		return view('pages.home');
+	}
 });
 
 // Auth

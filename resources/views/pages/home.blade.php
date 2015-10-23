@@ -4,7 +4,7 @@
 
 @section('content')
 
-<section class="container sample-question">
+<section class="sample-question">
 	<div class="jumbotron">
 	  <h2>"Why is the sky blue?"</h2>
 	  <p>Questions like this one and more answered by real professors and teaching assistants.</p>

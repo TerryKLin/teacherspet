@@ -1,4 +1,4 @@
-.main-nav {
+.main-header {
 	margin-top: 30px;
 }
 
@@ -13,9 +13,7 @@ a.logo--main-nav {
 	font-family: $primary-font;
 	font-weight: 300;
 	text-decoration: none;
-	color: $white;
 	&:hover {
-		color: $blue;
 		text-decoration: none;
 	}
 
@@ -28,9 +26,7 @@ a.logo--main-nav {
 		font-family: $primary-font;
 		font-weight: 300;
 		text-decoration: none;
-		color: $white;
 		&:hover {
-			color: $blue;
 			text-decoration: none;
 		}
 		&:last-child {

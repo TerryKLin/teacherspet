@@ -3,10 +3,12 @@
 
 // Base
 @import "vars.scss";
-@import "typeography.scss";
 @import "colors.scss";
+@import "typeography.scss";
+
 
 // Layout
 @import "layout/general.scss";
 @import "layout/navbar.scss";
-@import "layout/fullWidthLanding.scss";
+@import "layout/fullWidthBG.scss";
+@import "layout/auth.scss";

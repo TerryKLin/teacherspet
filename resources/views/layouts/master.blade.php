@@ -10,32 +10,49 @@
 	<title>@yield('title')</title>
 </head>
 <body>
-	<header class="full-width-landing">
-		
+
+	@unless(Auth::check())
+		<div class="full-width-bg">
+	@endif
+
+	<header class="main-header">
 		<nav class="container main-nav">
 		  <div class="main-nav--container">
-			<a class="logo--main-nav" href="{{ url('/') }}"><i class="fa fa-graduation-cap"></i> Teacher's Pet</a>
+
+			@if(Auth::check())
+				<a class="logo--main-nav blue-text hover-grey" href="{{ url('/') }}"><i class="fa fa-graduation-cap"></i> Teacher's Pet</a>
+			@else
+				<a class="logo--main-nav white-text hover-blue" href="{{ url('/') }}"><i class="fa fa-graduation-cap"></i> Teacher's Pet</a>
+			@endif
+
 			<div class="nav-group">
 
 			@if(Auth::check())
-				<a href="logout">Log Out</a>
+				<a href="logout" class="blue-text hover-grey">Log Out</a>
 			@else
-				<a href="register">Register</a>
-				<a href="login">Log In</a>
-			@endif
-
-
-			@if ($errors->any())
-        		{{ implode('', $errors->all('<div>:message</div>')) }}
+				<a href="register" class="white-text hover-blue">Register</a>
+				<a href="login" class="white-text hover-blue">Log In</a>
 			@endif
 
 			</div>
-		  </div><!-- /.container-fluid -->
+		  </div>{{-- .container-fluid --}}
 		</nav>
+	</header>
+
+	<div class="container">
+	
+		@if ($errors->any())
+			@foreach($errors->all() as $error)
+    			<div class="alert alert-danger">{{ $error }}</div>
+    		@endforeach
+		@endif
 
 		@yield('content')
+	</div>
 
-	</header>
+	@if(Auth::check())
+		</div>{{-- .full-width-bg --}}
+	@endif
 
 	<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
