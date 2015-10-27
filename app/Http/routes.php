@@ -20,6 +20,14 @@ Route::get('/', function () {
 	}
 });
 
+// Redirect
+Route::get('home', function () { 
+	return redirect('/'); 
+});
+
+// Questions
+Route::get('ask', 'QuestionController@create');
+
 // Auth
 Route::get('register', array('uses' => 'Auth\AuthController@getRegister'));
 Route::post('register', array('uses' => 'Auth\AuthController@postRegister'));

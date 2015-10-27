@@ -28,6 +28,7 @@
 			<div class="nav-group">
 
 			@if(Auth::check())
+				<a href="ask" class="blue-text hover-grey">Ask</a>
 				<a href="logout" class="blue-text hover-grey">Log Out</a>
 			@else
 				<a href="register" class="white-text hover-blue">Register</a>
