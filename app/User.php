@@ -36,4 +36,16 @@ class User extends Model implements AuthenticatableContract,
      * @var array
      */
     protected $hidden = ['password', 'remember_token'];
+
+    /**
+     * A user can have many questions.
+     * 
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */                     
+    public function questions()
+    {
+        return $this->hasMany('App\Question');
+    }
+
+
 }

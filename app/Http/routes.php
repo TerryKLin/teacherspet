@@ -27,6 +27,7 @@ Route::get('home', function () {
 
 // Questions
 Route::get('ask', 'QuestionController@create');
+Route::get('edit/{id}', 'QuestionController@edit');
 
 // Auth
 Route::get('register', array('uses' => 'Auth\AuthController@getRegister'));

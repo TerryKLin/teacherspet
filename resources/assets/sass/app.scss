@@ -2,13 +2,16 @@
 @import url(https://fonts.googleapis.com/css?family=Raleway:400,300);
 
 // Base
-@import "vars.scss";
-@import "colors.scss";
-@import "typeography.scss";
+@import "vars";
+@import "colors";
+@import "typeography";
 
+
+// Partials
+@import "partials/forms";
 
 // Layout
-@import "layout/general.scss";
-@import "layout/navbar.scss";
-@import "layout/fullWidthBG.scss";
-@import "layout/auth.scss";
+@import "layout/general";
+@import "layout/navbar";
+@import "layout/fullWidthBG";
+@import "layout/auth";

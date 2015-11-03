@@ -2,6 +2,8 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use App\User as User;
+use App\Question as Question;
 
 class DatabaseSeeder extends Seeder
 {
@@ -12,9 +14,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        DB::table('users')->delete();
+        DB::table('questions')->delete();
         Model::unguard();
 
-        // $this->call(UserTableSeeder::class);
+        $this->call(UsersTableSeeder::class);
+        $this->call(QuestionsTableSeeder::class);
 
         Model::reguard();
     }

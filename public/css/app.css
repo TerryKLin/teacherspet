@@ -5999,7 +5999,7 @@ h1 {
   font-family: "Raleway", sans-serif; }
 
 .blue-text {
-  color: #19B5FE; }
+  color: #3279BC; }
 
 .white-text {
   color: #ecf0f1; }
@@ -6008,10 +6008,13 @@ h1 {
   color: #ecf0f1; }
 
 .hover-blue:hover {
-  color: #19B5FE; }
+  color: #3279BC; }
 
 .hover-grey:hover {
   color: #333333; }
+
+.form-control {
+  height: 39px; }
 
 .flex--center {
   display: -webkit-flex;

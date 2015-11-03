@@ -43,14 +43,18 @@
 	</header>
 
 	<div class="container">
-	
-		@if ($errors->any())
-			@foreach($errors->all() as $error)
-    			<div class="alert alert-danger">{{ $error }}</div>
-    		@endforeach
-		@endif
 
-		@yield('content')
+		<div class="row">
+			<div class="col-md-8">
+				@if ($errors->any())
+					@foreach($errors->all() as $error)
+		    			<div class="alert alert-danger">{{ $error }}</div>
+		    		@endforeach
+				@endif
+
+				@yield('content')
+			</div>
+		</div>
 	</div>
 
 	@if(Auth::check())
