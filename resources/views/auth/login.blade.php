@@ -4,8 +4,8 @@
 
 @section('content')
 
-<section class="auth-form">
-	<div class="col-lg-6 col-xs-12">
+<div class="row">
+	<div class="col-lg-6 col-lg-offset-6 col-xs-12">
 		<div class="jumbotron">
 		  <h2>Login</h2>
 		  {!! Form::open() !!}
@@ -22,6 +22,6 @@
 		  {!! Form::close() !!}
 		</div>
 	</div>
-</section>
+</div>
 
 @endsection

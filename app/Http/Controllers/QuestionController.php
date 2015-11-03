@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
+use App\Question;
 
 class QuestionController extends Controller
 {
@@ -15,7 +16,8 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        //
+        $questions = Question::all();
+        return view('questions.index', compact('questions'));
     }
 
     /**
@@ -58,7 +60,8 @@ class QuestionController extends Controller
      */
     public function edit($id)
     {
-        return view('questions.edit');
+        $question = Question::findOrFail($id);
+        return view('questions.edit', compact($question));
     }
 
     /**

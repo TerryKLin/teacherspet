@@ -6016,6 +6016,9 @@ h1 {
 .form-control {
   height: 39px; }
 
+.question-title {
+  color: #ecf0f1; }
+
 .flex--center {
   display: -webkit-flex;
   display: -ms-flexbox;

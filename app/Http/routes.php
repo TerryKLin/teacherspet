@@ -11,23 +11,15 @@
 |
 */
 
-// Home page
-Route::get('/', function () { 
-	if(Auth::check()) {
-		return view('questions.index'); 
-	} else {
-		return view('pages.home');
-	}
-});
-
-// Redirect
-Route::get('home', function () { 
-	return redirect('/'); 
-});
-
 // Questions
+Route::get('/', [
+	'middleware' => 'auth',
+	'uses' => 'QuestionController@index'
+]);
 Route::get('ask', 'QuestionController@create');
-Route::get('edit/{id}', 'QuestionController@edit');
+Route::get('{id}/edit', 'QuestionController@edit');
+
+
 
 // Auth
 Route::get('register', array('uses' => 'Auth\AuthController@getRegister'));
