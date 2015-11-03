@@ -27,6 +27,16 @@ class AuthController extends Controller
     protected $loginPath = '/login';
 
     /**
+     * Get the login username to be used by the controller.
+     *
+     * @return string
+     */
+    public function loginUsername()
+    {
+        return property_exists($this, 'username') ? $this->username : 'username';
+    }
+
+    /**
      * Create a new authentication controller instance.
      *
      * @return void
