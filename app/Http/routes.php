@@ -17,9 +17,10 @@ Route::get('/', [
 	'uses' => 'QuestionController@index'
 ]);
 Route::get('ask', 'QuestionController@create');
-Route::get('{id}/edit', 'QuestionController@edit');
-
-
+Route::post('ask', 'QuestionController@store');
+Route::get('questions/{id}', 'QuestionController@show');
+Route::get('questions/{id}/edit', 'QuestionController@edit');
+Route::patch('questions/{id}/edit', 'QuestionController@update');
 
 // Auth
 Route::get('register', array('uses' => 'Auth\AuthController@getRegister'));

@@ -4,8 +4,13 @@
 
 @section('content')
 
-<h3>Ask a Question</h3>
+<h3>Ask a new question</h3>
 
-@include('forms.question')
+{!! Form::open() !!}
+	@include('forms.question')
+	<div class="form-group">
+		{!! Form::submit('Ask this question!', array('class' => 'btn btn-primary btn-block')) !!}
+	</div>
+{!! Form::close() !!}
 
 @endsection

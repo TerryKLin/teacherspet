@@ -6,9 +6,19 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use App\Question;
+use App\User;
+use Auth;
+use Session;
 
 class QuestionController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth', ['only' => ['create', 'store', 'destroy']]);
+        $this->middleware('owner', ['only' => ['edit', 'update', 'destroy']]);
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -16,7 +26,7 @@ class QuestionController extends Controller
      */
     public function index()
     {
-        $questions = Question::all();
+        $questions = Question::latest('created_at')->get();
         return view('questions.index', compact('questions'));
     }
 
@@ -38,7 +48,13 @@ class QuestionController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+        $question = new Question($request->all());
+        Auth::user()->questions()->save($question);
+
+        Session::flash('flash_message', 'Question successfully asked!');
+
+        return redirect()->action('QuestionController@show', [$question]);
     }
 
     /**
@@ -49,7 +65,8 @@ class QuestionController extends Controller
      */
     public function show($id)
     {
-        //
+        $question = Question::findOrFail($id);
+        return view('questions.show', compact('question'));
     }
 
     /**
@@ -61,7 +78,7 @@ class QuestionController extends Controller
     public function edit($id)
     {
         $question = Question::findOrFail($id);
-        return view('questions.edit', compact($question));
+        return view('questions.edit', compact('question'));
     }
 
     /**
@@ -73,7 +90,18 @@ class QuestionController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $question = Question::findOrFail($id);
+
+        $this->validate($request, [
+            'title' => 'required',
+            'body' => 'required'
+        ]);
+
+        $question->fill($request->all())->save();
+
+        Session::flash('flash_message', 'Question successfully saved!');
+
+        return redirect()->action('QuestionController@show', [$question]);
     }
 
     /**
