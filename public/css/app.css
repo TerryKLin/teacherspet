@@ -6019,36 +6019,8 @@ h1 {
 .question-title {
   color: #ecf0f1; }
 
-.flex--center {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center; }
-
 .btn-primary {
   color: #ecf0f1; }
-
-.container {
-  height: 100%; }
-
-section.sample-question {
-  height: 100%;
-  width: 100%;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin-top: -75px; }
 
 .main-header {
   margin-top: 30px; }
@@ -6089,19 +6061,5 @@ a.logo--main-nav {
   background-size: cover;
   background-position: center;
   overflow: hidden; }
-
-section.auth-form {
-  height: 100%;
-  width: 100%;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-align-items: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  margin-top: -75px; }
 
 /*# sourceMappingURL=app.css.map */

@@ -1,11 +1,8 @@
-@extends('layouts.master')
-
+@extends('layouts.auth')
 @section('title', 'Register | Teacher\'s Pet')
-
 @section('content')
-
-<section class="auth-form">
-	<div class="col-lg-6 col-xs-12">
+<div class="row">
+	<div class="col-lg-6 col-lg-offset-3 col-xs-12">
 		<div class="jumbotron">
 		  <h2>Register</h2>
 		  {!! Form::open() !!}
@@ -23,10 +20,9 @@
 		    	{!! Form::password('password_confirmation', array('class'=>'form-control','placeholder'=>'Confirm Password')) !!}
 		    </div>
 
-		    {!! Form::submit('Register', array('class'=>'btn btn-default')) !!}
+		    {!! Form::submit('Register', array('class'=>'btn btn-primary btn-block')) !!}
 		  {!! Form::close() !!}
 		</div>
 	</div>
-</section>
-
+</div>
 @endsection
