@@ -12,9 +12,7 @@
 	<header class="main-header">
 		<nav class="container main-nav">
 		  <div class="main-nav--container">
-
 			<a class="logo--main-nav blue-text hover-grey" href="{{ url('/') }}"><i class="fa fa-graduation-cap"></i> Teacher's Pet</a>
-
 			<div class="nav-group">
 				<a href="{{ url('ask') }}" class="blue-text hover-grey">Ask</a>
 				<a href="{{ url('logout') }}" class="blue-text hover-grey">Log Out</a>
