@@ -29,6 +29,14 @@ Route::get('login', array('uses' => 'Auth\AuthController@getLogin'));
 Route::post('login', array('uses' => 'Auth\AuthController@postLogin'));
 Route::get('logout', array('uses' => 'Auth\AuthController@getLogout'));
 
+//Password reset link request routes
+Route::get('password/email','Auth\PasswordController@getEmail');
+Route::post('password/email','Auth\PasswordController@postEmail');
+
+//Password reset routes
+Route::get('password/reset','Auth\PasswordController@getReset');
+Route::post('password/reset','Auth\PasswordController@postReset');
+
 Route::controllers([
    'password' => 'Auth\PasswordController',
 ]);
